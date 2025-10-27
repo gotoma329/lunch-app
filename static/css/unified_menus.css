@@ -214,19 +214,112 @@ body {
     line-height: 1.3;
 }
 
+/* メニューバッジの基本スタイル */
 .menu-badge {
-    background: #667eea;
     color: white;
-    padding: 0.2rem 0.6rem;
-    border-radius: 10px;
-    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 600;
     white-space: nowrap;
     margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Noto Sans JP", "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", sans-serif;
+}
+
+.menu-badge::before {
+    font-family: "Material Icons";
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* カテゴリー別スタイル */
+.menu-badge.side {
+    background: linear-gradient(135deg, #E6D5B8 0%, #C4A484 100%);
+    border: 1px solid rgba(196, 164, 132, 0.3);
+}
+.menu-badge.side::before {
+    content: "lunch_dining";  /* サイドメニューを表すアイコン */
+}
+
+.menu-badge.healthy {
+    background: linear-gradient(135deg, #98FB98 0%, #3CB371 100%);
+    border: 1px solid rgba(60, 179, 113, 0.3);
+}
+.menu-badge.healthy::before {
+    content: "eco";  /* 葉っぱのアイコンでヘルシーさを表現 */
+}
+
+.menu-badge.seafood {
+    background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
+    border: 1px solid rgba(70, 130, 180, 0.3);
+}
+.menu-badge.seafood::before {
+    content: "water";  /* 波のアイコンで海の幸を表現 */
+}
+
+.menu-badge.standard {
+    background: linear-gradient(135deg, #B8B8B8 0%, #808080 100%);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+.menu-badge.standard::before {
+    content: "restaurant";  /* レストランアイコンで定番メニューを表現 */
+}
+
+.menu-badge.meat {
+    background: linear-gradient(135deg, #FF6B6B 0%, #C62828 100%);
+    border: 1px solid rgba(198, 40, 40, 0.3);
+}
+.menu-badge.meat::before {
+    content: "kebab_dining";  /* 肉料理を表すアイコン */
+}
+
+.menu-badge.bowl {
+    background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+    border: 1px solid rgba(255, 140, 0, 0.3);
+}
+.menu-badge.bowl::before {
+    content: "rice_bowl";  /* 丼ものを表すアイコン */
+}
+
+/* カテゴリー別スタイル */
+.menu-badge.side {
+    background: linear-gradient(135deg, #E6D5B8 0%, #C4A484 100%);
+    border: 1px solid rgba(196, 164, 132, 0.3);
+}
+
+.menu-badge.healthy {
+    background: linear-gradient(135deg, #98FB98 0%, #3CB371 100%);
+    border: 1px solid rgba(60, 179, 113, 0.3);
+}
+
+.menu-badge.seafood {
+    background: linear-gradient(135deg, #87CEEB 0%, #4682B4 100%);
+    border: 1px solid rgba(70, 130, 180, 0.3);
+}
+
+.menu-badge.standard {
+    background: linear-gradient(135deg, #B8B8B8 0%, #808080 100%);
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.menu-badge.meat {
+    background: linear-gradient(135deg, #FF6B6B 0%, #C62828 100%);
+    border: 1px solid rgba(198, 40, 40, 0.3);
+}
+
+.menu-badge.bowl {
+    background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+    border: 1px solid rgba(255, 140, 0, 0.3);
 }
 
 .menu-badge.unavailable {
     background: #e53e3e;
+    opacity: 0.8;
 }
 
 .menu-description {

@@ -315,9 +315,21 @@ function createMenuCard(menu) {
     // 画像URL
     const imageUrl = menu.image_url || '/static/images/menu-placeholder.jpg';
 
-    // カテゴリバッジ
+    // カテゴリバッジ（カテゴリ名に基づいてクラスを付与）
+    const getCategoryClass = (categoryName) => {
+        const categoryMap = {
+            'サイドメニュー': 'side',
+            'ヘルシー': 'healthy',
+            '海の幸': 'seafood',
+            '定番': 'standard',
+            '肉の彩り': 'meat',
+            '丼もの': 'bowl'
+        };
+        return categoryMap[categoryName] || '';
+    };
+
     const categoryBadge = menu.category
-        ? `<span class="menu-badge">${escapeHtml(menu.category.name)}</span>`
+        ? `<span class="menu-badge ${getCategoryClass(menu.category.name)}">${escapeHtml(menu.category.name)}</span>`
         : '';
 
     card.innerHTML = `
