@@ -86,6 +86,22 @@ class CustomerOrdersPage {
         if (dateToFilter) {
             dateToFilter.addEventListener('change', () => this.applyFilters());
         }
+
+        // 検索・クリアボタン
+        const applyBtn = document.getElementById('applyFiltersBtn');
+        if (applyBtn) {
+            applyBtn.addEventListener('click', () => this.applyFilters());
+        }
+
+        const clearBtn = document.getElementById('clearFiltersBtn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (statusFilter) statusFilter.value = '';
+                if (dateFromFilter) dateFromFilter.value = '';
+                if (dateToFilter) dateToFilter.value = '';
+                this.applyFilters();
+            });
+        }
     }
 
     async loadOrders() {
